@@ -1,33 +1,177 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="cadastro-container">
-    <h1>Cadastro</h1>
-    <form class="cadastro-form">
-      <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-      </div>
-      <div class="form-group">
-        <label for="confirmar_senha">Confirmar senha:</label>
-        <input type="password" id="confirmar_senha" name="confirmar_senha" required>
-      </div>
-      <button type="submit">Cadastrar</button>
-    </form>
-  </div>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="style.css">
+
+        <title>Insight Lab</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="header__logo">Insight Lab</a>
+
+            <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+
+            <nav class="nav" id="nav-menu">
+                <div class="nav__content bd-grid">
+
+                    <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+    
+                    <div class="nav__perfil">
+                        <div class="nav__img">
+                            <img src="logo.jpeg" alt="">
+                        </div>
+                        
+                        <div>
+                            <a href="#" class="nav__name">Insight Lab</a>
+                            <span class="nav__profesion">Análise de dados para fins pedagógicos.</span>
+                        </div>
+                    </div>
+    
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                        </ul>
+                    </div>
+    
+
+            </nav>
+        </header>
+          <section id="section01">
+            <div class="container">
+              <div class="main_img">
+                <img src="teacher-animate.svg" alt="">
+              </div>
+
+              <div class="titulo">
+                <h1>Dados Transformados em Decisões Inteligentes.
+                </h1>
+                <p>Na Insight Lab, mergulhamos no universo dos seus dados para extrair insights valiosos que impulsionam o seu negócio. Deixe-nos guiar você rumo ao sucesso!</p>
+                <button class="btn-start">
+                  Start!
+                </button>
+                <button class="btn-contact">Contact</button>
+              </div>
+
+            </div>
+            </section>
+
+
+            <section id="section02">
+
+              <div class="sobre-nos">
+                <h1>Sobre a Insight Lab  </h1>
+                <p>Na Insight Lab, acreditamos que os dados são a bússola que guia o sucesso dos negócios na era digital. Somos uma equipe de especialistas apaixonados por transformar números em insights valiosos, impulsionando decisões estratégicas e resultados extraordinários.</p>
+               </div>
+
+
+              <div class="container">
+
+                  <div class="img02">
+                    <img src="Chat bot-rafiki.svg" alt="">
+                  </div>
+                  <div class="titulo02">
+                  <h1>Nossa Missao</h1>
+                  <p>Desvendar o potencial oculto dos seus dados, fornecendo análises precisas e personalizadas que revelam oportunidades, otimizam processos e impulsionam o crescimento do seu negócio.</p>
+                </div>
+
+
+            </section>
+
+
+            <section id="section03">
+              
+
+              <div class="lista">
+                <ol>
+                  <li>Análise de dados exploratória e preditiva;</li>
+                  <li>Visualização de dados e criação de dashboards interativos;</li>
+                  <li>Modelagem estatística e machine learning;</li>
+                  <li>Consultoria em estratégia de dados e transformação digital;</li>
+                  <li>Treinamento e capacitação em análise de dados.</li>
+
+                </ol>
+              </divclass>
+
+              <div class ="container">
+                <div class="img03">
+                  <img src="Data extraction-pana.svg" alt="">
+                </div>
+              </div>
+
+            </section>
+
+
+            <footer>
+              <div class="container-footer">
+                  <div class="row-footer">
+                      <!-- footer col-->
+                      <div class="footer-col">
+                          <h4>Empresa</h4>
+                          <ul>
+                              <li><a href="#"> Quem somos </a></li>
+                              <li><a href=""> nossos serviços </a></li>
+                              <li><a href=""> política de privacidade </a></li>
+                              <li><a href=""> programa de afiliados</a></li>
+                          </ul>
+                      </div>
+                      <!--end footer col-->
+                      <!-- footer col-->
+                      <div class="footer-col">
+                          <h4>Obter ajuda</h4>
+                          <ul>
+                              <li><a href="#">FAQ</a></li>
+                              <li><a href="#">Transporte</a></li>
+                              <li><a href="#">devoluções</a></li>
+                              <li><a href="#">Status De Pedido</a></li>
+                              <li><a href="#">Opções De Pagamento</a></li>
+                          </ul>
+                      </div>
+                      <!--end footer col-->
+                      <!-- footer col-->
+                      <div class="footer-col">
+                          <h4>Loja online</h4>
+                          <ul>
+                              <li><a href="#">Relógio</a></li>
+                              <li><a href="#">Saco</a></li>
+                              <li><a href="#">Calçado</a></li>
+                              <li><a href="#">Endereço</a></li>
+                          </ul>
+                      </div>
+                      <!--end footer col-->
+                      <!-- footer col-->
+                      <div class="footer-col">
+                          <h4>Se subescreva!</h4>
+                          <div class="form-sub">
+                              <form>
+                                  <input type="email" placeholder="Digite o seu e-mail" required>
+                                  <button>subscrever</button>
+                              </form>
+                          </div>
+      
+                          <div class="medias-socias">
+                              <a href="#"> <i class="fa fa-facebook"></i> </a>
+                              <a href="#"> <i class="fa fa-instagram"></i> </a>
+                              <a href="#"> <i class="fa fa-twitter"></i> </a>
+                              <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                          </div>
+      
+                      </div>
+                      <!--end footer col-->
+                  </div>
+              </div>
+          </footer>
+
+
+        <!-- ===== IONICONS ===== -->
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="main.js"></script>
+    </body>
 </html>
