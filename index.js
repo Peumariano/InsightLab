@@ -24,7 +24,57 @@ analisarSentimento(comentario).then((sentimento) => {
   console.log(`Sentimento: ${sentimento}`);
 });*/
 
+require("dotenv").config();
+const{Configuration, OpenAIApi} = require("openai"); 
 
+const config =  new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+  organization: process.env.OPENAI_ORGANIZATION
+
+})
+
+const openai = new OpenAIApi(config)
+
+const gerarDescricao = async (nomeProduto) =>{
+  const prompt = 'Gerar uma descrição para o produto ${nomeProduto}'
+
+  try {
+    
+    const completion = await openai.createCompletion({
+      model:"gpt-4o-mini",
+      prompt: prompt,
+      max_tokens: 2000})
+    return completion.data.choices[0].text.trim();  
+
+  } catch (error) {
+    if (error.response) {
+      console.log(error.response.status)
+      console.log(error.response.data)
+      
+    }else{
+      console.log(error.message)
+    }
+
+    
+  }
+} 
+
+(async () => {
+  const nomeProduto = "Camera Canon";
+  const descricaoProduto = await gerarDescricao(nomeProduto);
+  console.log('Nome do produto ${nomeProduto}') 
+  console.log('Descrição do produto ${descricaoProduto}')
+})
+
+
+
+
+
+
+
+
+
+//Conexão com o BD
 async function runQuery() {
     const mysql = await import('mysql2');
     const connection = mysql.createConnection({
@@ -64,7 +114,5 @@ async function runQuery() {
     });
     }
 runQuery();
-
-
 
 

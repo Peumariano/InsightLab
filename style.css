@@ -54,13 +54,16 @@
   }
 
   .btn-start{
-    width: 8rem;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 0;
+    width: 130px;
     height: 4rem;
     border-radius: 9%;
     border-color: #E6E7E9;
     background-color: #3664F4;
     color: #E6E7E9;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 500;
     font-family: var(--body-font);
   }
@@ -69,18 +72,23 @@
     color: #3664F4;
     cursor: pointer;
     transition: 0.2s;
+    border-width: 0.1px;
+    border-style:solid;
     border-color: #3664F4;
   }
 
   .btn-contact{
+    display: inline-block;
+    text-align: center;
+    padding: 12px 0;
     margin-left: 1.5rem;
-    width: 8rem;
+    width: 130px;
     height: 4rem;
     border-radius: 9%;
     border-color: #E6E7E9;
     background-color: #070D1F;
     color: #E6E7E9;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 500;
     font-family: var(--body-font);
   }
@@ -89,6 +97,8 @@
     color: #070D1F;
     cursor: pointer;
     transition: 0.2s;
+    border-width: 0.1px;
+    border-style: solid;
     border-color: #070D1F;
   }
 
@@ -152,7 +162,8 @@
 
   footer{
     background-color: #3664F4;
-    padding: 50px 0;
+    padding: 5px 50px 5px 50px;
+   
 }
 .container-footer{
     max-width: 1400px;
@@ -162,11 +173,12 @@
 .row-footer{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .footer-col{
     width: 25%;
-    padding: 0 15px;
+    padding: 4%;
 }
 .footer-col h4{
     font-size: 22px;
@@ -194,30 +206,6 @@
 .footer-col ul li a:hover{
     color: #E6E7E9;
     padding-left: 10px;
-}
-.footer-col .medias-socias{
-    margin-top: 30px;
-}
-.footer-col .medias-socias a{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    margin: 0 10px 10px 0;
-    text-decoration: none;
-    border-radius: 50%;
-    color: #E6E7E9;
-    border: 1px solid #E6E7E9;
-    transition: all 0.5s ease;
-}
-.footer-col .medias-socias a i{
-    font-size: 20px;
-}
-
-.footer-col .medias-socias a:hover{
-    color: #3664F4;
-    background-color: #E6E7E9;
 }
 .footer-col .form-sub input{
     width: 100%;
