@@ -1,0 +1,56 @@
+<body>
+    <h1 id="titulo">Responda algumas perguntas para a análise</h1>
+    <p id="pergunta"></p>
+    <input type="text" id="resposta" placeholder="Digite aqui">
+    <button id="enviar">Enviar</button>
+  
+    <ul id="listaRespostas"></ul>
+  
+    <p id="mensagemFinal" style="display: none;">Questionário concluído!</p>
+    <div id="respostaChatGPT"></div>
+  
+    <script>
+      // ... (seu código JavaScript existente) ...
+  
+      async function armazenarResposta() {
+        const resposta = document.getElementById("resposta").value;
+        respostas[perguntas[perguntaAtual]] = resposta;
+        document.getElementById("resposta").value = "";
+  
+        atualizarListaRespostas();
+        perguntaAtual++;
+  
+        if (perguntaAtual === perguntas.length) {
+          await enviarParaChatGPT();
+          exibirMensagemFinal();
+        } else {
+          exibirPergunta();
+        }
+      }
+  
+      async function enviarParaChatGPT() {
+        const messages = Object.entries(respostas).map(([pergunta, resposta]) => ({
+          role: "user",
+          content: `${pergunta}: ${resposta}`,
+        }));
+  
+        try {
+          const response = await fetch('http://localhost:3000/chat', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ messages }),
+          });
+  
+          const data = await response.json();
+          document.getElementById("respostaChatGPT").textContent = data.reply;
+        } catch (error) {
+          console.error('Erro ao comunicar com o backend:', error);
+          document.getElementById("respostaChatGPT").textContent = "Erro ao obter resposta do ChatGPT.";
+        }
+      }
+  
+      // ... (seu código JavaScript existente) ...
+    </script>
+  </body>

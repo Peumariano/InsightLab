@@ -165,6 +165,7 @@
     function exibirPergunta() {
       if (perguntaAtual < perguntas.length) {
         document.getElementById("pergunta").textContent = perguntas[perguntaAtual];
+
       } else {
         exibirMensagemFinal();
       }
@@ -174,6 +175,7 @@
       const resposta = document.getElementById("resposta").value;
       respostas[perguntas[perguntaAtual]] = resposta;
       document.getElementById("resposta").value = "";
+  
       atualizarListaRespostas();
       perguntaAtual++;
       exibirPergunta();
@@ -185,16 +187,26 @@
       for (const pergunta in respostas) {
         const resposta = respostas[pergunta];
         const itemLista = document.createElement("li");
-        itemLista.textContent = `${pergunta}: ${resposta}`;
-        listaRespostas.appendChild(itemLista);
+        //itemLista.textContent = `${pergunta}: ${resposta}`;
+        //listaRespostas.appendChild(itemLista);
       }
     }
 
     function exibirMensagemFinal() {
+
+      
+
       document.getElementById("pergunta").style.display = "none";
       document.getElementById("resposta").style.display = "none";
       document.getElementById("enviar").style.display = "none";
+
+      document.getElementById("titulo").style.display = "none";
+
+
+
       document.getElementById("mensagemFinal").style.display = "block";
+
+
     }
 
     document.getElementById("enviar").addEventListener("click", armazenarResposta);

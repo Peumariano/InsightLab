@@ -7,8 +7,10 @@
     "abort-controller": "^3.0.0",
     "agentkeepalive": "^4.6.0",
     "asynckit": "^0.4.0",
+    "body-parser": "^1.20.3",
     "call-bind-apply-helpers": "^1.0.2",
     "combined-stream": "^1.0.8",
+    "cors": "^2.8.5",
     "delayed-stream": "^1.0.0",
     "dotenv": "^16.4.7",
     "dunder-proto": "^1.0.1",
@@ -17,6 +19,7 @@
     "es-object-atoms": "^1.1.1",
     "es-set-tostringtag": "^2.1.0",
     "event-target-shim": "^5.0.1",
+    "express": "^4.21.2",
     "form-data": "^4.0.2",
     "form-data-encoder": "^1.7.2",
     "formdata-node": "^4.4.1",
@@ -36,7 +39,7 @@
     "node-domexception": "^1.0.0",
     "node-fetch": "^2.7.0",
     "npm": "^11.1.0",
-    "openai": "^4.85.4",
+    "openai": "^4.86.1",
     "tr46": "^0.0.3",
     "undici-types": "^5.26.5",
     "web-streams-polyfill": "^4.0.0-beta.3",
@@ -44,9 +47,15 @@
     "whatwg-url": "^5.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "dotenv-webpack": "^8.1.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
 }
