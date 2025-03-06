@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 90px;
+    background-color: #E6E7E9;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+
+h1 {
+    text-align: center;
+}
+
+.question-container {
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+}
+
+textarea {
+    width: 90%;
+    height: 3rem;
+    padding-left: 20px;
+    padding-top: 12px;
+    font-size: 2.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 20px
+}
+
+button {
+    width: 12rem;
+    height: 5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #3664F4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E6E7E9;
+    color: #3664F4;
+    transition: .2s;
+    border: solid 1px #3664F4;
+}
+
+#insights {
+    width: 90%;
+    height: auto;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-indent: 10px;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+
+
+.insight {
+    background-color: #fff;
+    border-left: 5px solid #3664F4;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+
+
+.insight i {
+    font-style: italic;
+    color: #555;
+}

@@ -1,17 +1,33 @@
-/*import OpenAI from "openai";
+/*import { OpenAI } from 'openai';
+import dotenv from 'dotenv';  // Carrega o arquivo .env
 
+dotenv.config();  // Carrega o arquivo .env// Carrega o arquivo .env
+
+
+// Inicializa a instância da OpenAI com a chave da API
 const openai = new OpenAI({
-  apiKey: "    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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 async function analisarSentimento(texto) {
   try {
-    const response = await openai.completions.create({
-      model: "gpt-4o-mini",
-      prompt: `Analise o sentimento deste texto: '${texto}'`,
-      max_tokens: 60,
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o-mini", // Você pode escolher o modelo que desejar
+      messages: [
+        {
+          role: "system",
+          content: "Você é capaz de analisar sentimentos em textos.",
+        },
+        {
+          role: "user",
+          content: `Analise sentimento do texto: '${texto}'`,
+        },
+      ],
+      max_tokens:30,
     });
-    return response.choices[0].text.trim();
+
+    const sentimento = response.choices[0].message.content.trim();
+    return sentimento;
   } catch (error) {
     console.error("Erro ao analisar sentimento:", error);
     return null;
@@ -22,10 +38,28 @@ async function analisarSentimento(texto) {
 const comentario = "A aula foi muito interessante, mas a prova estava difícil.";
 analisarSentimento(comentario).then((sentimento) => {
   console.log(`Sentimento: ${sentimento}`);
-});*/
+});
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const config =  new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
   organization: process.env.OPENAI_ORGANIZATION
@@ -63,55 +97,4 @@ const gerarDescricao = async (nomeProduto) =>{
   const descricaoProduto = await gerarDescricao(nomeProduto);
   console.log('Nome do produto ${nomeProduto}') 
   console.log('Descrição do produto ${descricaoProduto}')
-})
-
-
-
-
-
-
-
-
-
-//Conexão com o BD
-async function runQuery() {
-    const mysql = await import('mysql2');
-    const connection = mysql.createConnection({
-        host: '127.0.0.1',
-        user: 'root',
-        password: '056319',
-        database: 'uninterDB'
-    });
-
-    connection.connect(function(err) {
-        if (err) {
-            console.error('Erro ao conectar: ' + err.stack);
-            return;
-        }
-        console.log('Conectado como ID ' + connection.threadId);
-    });
-
-    connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-        if (error) throw error;
-        console.log('A solução é: ', results[0].solution);
-        connection.end();
-    });
-
-    const nome = 'Nome do Usuário';
-    const email = 'email@exemplo2.com';
-    const senha = 'senha123';
-
-    const query = 'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)';
-    connection.query(query, [nome, email, senha], (error, results, fields) => {
-
-    if (error) {
-        console.error('Erro ao inserir usuário: ' + error);
-        return;
-    }
-
-    console.log('Usuário inserido com sucesso!');
-    });
-    }
-runQuery();
-
-
+})*/
